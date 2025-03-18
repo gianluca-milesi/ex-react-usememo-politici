@@ -7,15 +7,10 @@ function App() {
   const [politicians, setPoliticians] = useState([])
   const [search, setSearch] = useState("")
 
-  async function fetchJson(url) {
-    const response = await fetch(url)
-    const obj = await response.json()
-    return obj
-  }
-
   async function fetchPoliticians() {
-    const data = await fetchJson(`https://boolean-spec-frontend.vercel.app/freetestapi/politicians`)
-    setPoliticians(data)
+    const response = await fetch(`https://boolean-spec-frontend.vercel.app/freetestapi/politicians`)
+    const politiciansData = await response.json()
+    setPoliticians(politiciansData)
   }
 
   useEffect(() => {
