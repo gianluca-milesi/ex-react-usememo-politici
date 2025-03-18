@@ -1,4 +1,8 @@
+import { memo } from "react"
+
 function PoliticianCard({ name = "", biography = "", position = "", image = "" }) {
+
+    console.log(name)
 
     return (
         <div className="card">
@@ -14,4 +18,4 @@ function PoliticianCard({ name = "", biography = "", position = "", image = "" }
     )
 }
 
-export default PoliticianCard
+export default memo(PoliticianCard)

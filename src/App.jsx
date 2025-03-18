@@ -31,13 +31,14 @@ function App() {
       <section className="list-politicians">
         <h1>Lista politici</h1>
         <ul>
-          {filteredPoliticians.map((p, i) => (
-            <li key={i}><PoliticianCard
-              name={p.name}
-              biography={p.biography}
-              position={p.position}
-              image={p.image}
-            />
+          {filteredPoliticians.map((p) => (
+            <li key={p.id}>
+              <PoliticianCard
+                name={p.name}
+                biography={p.biography}
+                position={p.position}
+                image={p.image}
+              />
             </li>
           ))}
         </ul>
