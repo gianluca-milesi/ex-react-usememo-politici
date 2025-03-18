@@ -1,0 +1,39 @@
+/* RESET RULES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  padding: 2rem;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+/* PoliticianCard */
+.card {
+  display: flex;
+  align-items: center;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+}
