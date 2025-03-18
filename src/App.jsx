@@ -5,6 +5,7 @@ import PoliticianCard from "./components/PoliticianCard.jsx"
 function App() {
 
   const [politicians, setPoliticians] = useState([])
+  const [search, setSearch] = useState("")
 
   async function fetchJson(url) {
     const response = await fetch(url)
@@ -21,13 +22,21 @@ function App() {
     fetchPoliticians()
   }, [])
 
+  const filteredPoliticians = politicians.filter(p => p.name.toLowerCase().includes(search.toLocaleLowerCase())
+    || p.biography.toLocaleLowerCase().includes(search.toLocaleLowerCase()))
+
 
   return (
     <main>
-      <section>
+      <section className="search-politicians">
+        <h3>Cerca un politico</h3>
+        <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} />
+      </section>
+
+      <section className="list-politicians">
         <h1>Lista politici</h1>
         <ul>
-          {politicians.map((p, i) => (
+          {filteredPoliticians.map((p, i) => (
             <li key={i}><PoliticianCard
               name={p.name}
               biography={p.biography}
