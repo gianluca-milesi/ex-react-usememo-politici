@@ -2,6 +2,9 @@ import { memo } from "react"
 
 
 function PoliticianCard({ name = "", biography = "", position = "", image = "" }) {
+
+    console.log("Card")
+
     return (
         <div className="card">
             <figure>
